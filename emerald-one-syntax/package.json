@@ -1,14 +1,14 @@
 {
-  "name": "emerald-one-syntax",
+  "name": "Unix-Emerald-Syntax",
   "theme": "syntax",
-  "version": "1.1.5",
-  "description": "Emerald Syntax - An Atom syntax theme for those who don't want quite so many colors. And those who like green.",
+  "version": "1.0.0",
+  "description": "A classic Unix like syntax highlighting theme that borrows heavily from the now deprecated emerald-syntax. For anyone that likes green, this is for you.",
   "repository": {
     "type": "git",
     "url": "https://github.com/TheQZ/emerald-syntax"
   },
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">1.0.0"
   }
 }
