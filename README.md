@@ -11,4 +11,4 @@ As stated in the main description this syntax theme borrows heavily from the exi
 
 ## Screenshot
 
-<p align="left"><img src="https://github.com/jpjones6/Unix-Emerald-Syntax/blob/master/screenshot.png" alt="Unix-Emerald syntax theme for Atom" width="392px" height="595px"></p>
+<p align="left"><img src="https://github.com/jpjones6/Unix-Emerald-Syntax/raw/master/screenshot.png" alt="Unix-Emerald syntax theme for Atom" width="392px" height="595px"></p>
