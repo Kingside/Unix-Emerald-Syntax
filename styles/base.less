@@ -1,18 +1,18 @@
 @import "syntax-variables";
 
-// Main code editor styles
+//Main code editor styles
 atom-text-editor,
 :host {
 
   background-color: @background;
   color: @font-color;
 
-  // Line that designates where text will wrap
+  //Line that designates where text will wrap
   .wrap-guide {
     background: @guides;
   }
 
-  // Line between bracket indentations
+  //Line between bracket indentations
   .indent-guide {
     color: @guides;
   }
@@ -21,7 +21,7 @@ atom-text-editor,
     color: @invisible;
   }
 
-  // Gutter line numbers
+  //Gutter line numbers
   .gutter {
 
     background-color: @gutter-background;
@@ -30,13 +30,13 @@ atom-text-editor,
 
     .line-number {
 
-      // Gutter background
+      //Gutter background
       background: @gutter-background;
       color: @gutter-text;
       padding: 0px;
 
 
-      // Selected block
+      //Selected block
       &.cursor-line {
         background-color: @gutter-background-highlight;
         color: @gutter-text-highlight;
@@ -95,8 +95,8 @@ atom-text-editor,
 // Selected line style
 .line.cursor-line {
   background: none;
-  padding-left: 10px;
-  margin-left: -10px;
+  //padding-left: 10px;
+  //margin-left: -10px;
 }
 
 // Highlight style for search matches
