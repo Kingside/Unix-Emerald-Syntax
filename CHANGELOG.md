@@ -6,3 +6,6 @@
 * Updated Readme
 * Added screenshot
 * Added keywords
+
+## 1.0.2 - Small Patch
+* Changed way of inserting picture
