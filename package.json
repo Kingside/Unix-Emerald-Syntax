@@ -2,7 +2,7 @@
   "name": "Unix-Emerald-Syntax",
   "theme": "syntax",
   "version": "1.0.0",
-  "description": "A classic Unix like syntax theme.",
+  "description": "A classic Unix like syntax theme",
   "repository": {
     "type": "git",
     "url": "https://github.com/jpjones6/Unix-Emerald-Syntax"
