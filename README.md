@@ -9,6 +9,6 @@ As stated in the main description this syntax theme borrows heavily from the exi
 3) Fix highlighting such that highlighted text can still be seen.
 4) Update to take into account lack of shadow DOM boundary (Get rid of deprection) which will allow for the continued use of this theme in future Atom releases.
 
-##Screenshot
+## Screenshot
 
 <p align="left"><img src="https://github.com/jpjones6/Unix-Emerald-Syntax/blob/master/screenshot.png" alt="Unix-Emerald syntax theme for Atom" width="392px" height="595px"></p>
