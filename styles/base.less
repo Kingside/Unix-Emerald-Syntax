@@ -1,0 +1,564 @@
+@import "syntax-variables";
+
+//Main code editor styles
+atom-text-editor,atom-text-editor {
+
+  background-color: @background;
+  color: @font-color;
+
+  //Line that designates where text will wrap
+  .wrap-guide {
+    background: @guides;
+  }
+
+  //Line between bracket indentations
+  .indent-guide {
+    color: @guides;
+  }
+
+  .invisible-character {
+    color: @invisible;
+  }
+
+  //Gutter line numbers
+  .gutter {
+
+    background-color: @gutter-background;
+    color: @gutter-text;
+    //Border-right: 10px solid @background;
+
+    .line-number {
+
+      //Gutter background
+      background: @gutter-background;
+      color: @gutter-text;
+      padding: 0px;
+
+
+      //Selected block
+      &.cursor-line {
+        background-color: @gutter-background-highlight;
+        color: @gutter-text-highlight;
+        font-weight: 100;
+      }
+
+      //Current active line
+      &.cursor-line-no-selection {
+        background-color: @gutter-background-highlight;
+        color: @gutter-text-highlight;
+        //font-weight: bold;
+      }
+
+    }
+
+    //Hover state for line numbers
+    .line-number:hover {
+      background-color: @gutter-background;
+      color: @gutter-text-highlight;
+    }
+  }
+
+  //Line number for sections that have been collapsed
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: #FFFFFF;
+    background: none;
+  }
+
+  //Invisible Characters
+  .invisible {
+    color: @invisible;
+  }
+
+  //Cursor Color
+  .cursor {
+    border-color: @cursor-color;
+    border-left: solid 1px;
+  }
+
+  //Background of Selected Text
+  .selection .region {
+    background-color: @selected;
+  }
+
+}
+
+//Add left padding to code view
+.scroll-view {
+  padding-left: 3px;
+}
+
+
+
+//Selected line style
+.line.cursor-line {
+  background: none;
+  //padding-left: 10px;
+  //margin-left: -10px;
+}
+
+//Highlight style for search matches
+.atom-text-editor .search-results .syntax--marker .region {
+  background-color: transparent;
+  border: solid 1px @very-light-green;
+}
+
+//Highlight style for currently selected search result
+.atom-text-editor .search-results .syntax--marker.current-result .region {
+  background-color: @selected;
+  border: solid 1px @very-light-green;
+}
+
+//Comments
+.syntax--comment {
+  color: @comment;
+  background: none;
+}
+
+
+.syntax--keyword {
+
+  //@ of @font-face & @media
+  color: @keyword;
+
+  //try, catch, if, else, return (js)
+  &.syntax--control {
+    color: @control;
+  }
+
+  //=, +, -, ?, :, !=. &&, in (js)
+  &.syntax--operator {
+    color: @keyword;
+  }
+
+  //Unknown modifier
+  &.syntax--other.syntax--special-method {
+    color: @keyword;
+  }
+
+  //Unknown modifier
+  &.syntax--other.syntax--unit {
+    color: @keyword;
+  }
+}
+
+
+//Storage
+.syntax--storage {
+  color: @storage;
+
+  //var of var a = b;
+  &.syntax--modifier {
+    color: @storage;
+  }
+
+}
+
+
+.syntax--constant {
+
+  //true, false, null, undefined
+  color: @constant;
+
+  //\ in ("what\'s")
+  &.syntax--character.syntax--escape {
+    color: @constant;
+  }
+
+  //Numbers
+  &.syntax--numeric {
+    color: @numeric;
+  }
+
+  //FFFFFF -> #FFFFFF (css)
+  &.syntax--other.syntax--color {
+    color: @constant;
+  }
+
+  //Unknown modifier
+  &.syntax--other.syntax--symbol {
+    color: @constant;
+  }
+}
+
+
+
+.syntax--variable {
+
+  //this (js), @varable_name (sass), http://web.com in url(http://web.com), variable in {{variable}} (handlebars)
+  color: @variable;
+
+  //Unknown modifier
+  &.syntax--interpolation {
+    color: @variable;
+  }
+
+  //foo & bar in function name(foo, bar)
+  &.syntax--parameter.syntax--function {
+    color: @function-param;
+  }
+}
+
+
+//Invalid Text
+.syntax--invalid.syntax--illegal, .syntax--invalid.syntax--deprecated {
+  background: none;
+  color: @error;
+}
+
+.syntax--string {
+
+  .json {
+
+  }
+
+  //'value' in var='value', "name.png" or src="name.png"  , etc
+  color: @string;
+
+  //Regex - [\da-z] in /-([\da-z])/gi (js)
+  .syntax--constant {
+    color: @string;
+  }
+
+  &.syntax--regexp {
+
+    //?:input, select, textarea, button in  /^(?:input|select|textarea|button)$/i,
+    color: @string;
+
+    .syntax--constant.syntax--character.syntax--escape,
+    .syntax--source.syntax--ruby.syntax--embedded,
+    .syntax--string.syntax--regexp.syntax--arbitrary-repitition {
+      color: @string;
+    }
+
+    &.syntax--group {
+      color: @string;
+    }
+
+    &.syntax--character-class {
+      color: @string;
+    }
+
+    .syntax--source.syntax--ruby.syntax--embedded {
+      color: @string;
+    }
+
+  }
+
+  //site.dir in {{site.dir}}
+  .syntax--variable {
+    color: @variable;
+  }
+
+  //Unknown modifier
+  &.syntax--other.syntax--link {
+    color: @string;
+  }
+}
+
+//String interpolation in Ruby, CoffeeScript, and others
+.syntax--source .syntax--string {
+  .syntax--source,
+  .syntax--meta.syntax--embedded.line {
+    color: @string;
+  }
+
+  .syntax--punctuation.syntax--section.syntax--embedded {
+    color: @string;
+
+    .syntax--source {
+      color: @string;  //Required for the end of embedded strings in Ruby # 716
+    }
+  }
+}
+
+//Miscellaneous punctuation
+.syntax--punctuation {
+
+  &.syntax--terminator {
+    color: @punctuation;
+  }
+
+  &.syntax--separator {
+    color: @punctuation;
+  }
+
+  &.syntax--definition {
+
+    color: @punctuation;
+
+    &.syntax--comment {
+      color: @comment;
+    }
+
+    //Quotes
+    &.syntax--string,
+    &.syntax--variable,
+    &.syntax--parameters,
+    &.syntax--array {
+      color: @string;
+    }
+
+    &.syntax--heading,
+    &.syntax--identity {
+      color: @font-color;
+    }
+
+    &.syntax--bold {
+      color: @font-color;
+      font-style: bold;
+    }
+
+    &.syntax--italic {
+      color: @font-color;
+      font-style: italic;
+    }
+  }
+
+  &.syntax--section.syntax--embedded {
+    color: @font-color;
+  }
+
+}
+
+
+
+.syntax--support {
+
+  //background in background: none,
+  color: @support;
+
+  //Support | module -> module.exports
+  &.syntax--class {
+    color: @support;
+  }
+
+  &.syntax--function  {
+    color: @support; //.log -> console.log, url of url(http://web.com)
+
+    //Unknown modifier
+    &.syntax--any-method {
+      color: @support;
+    }
+  }
+
+  //{{}} -> {{ variable }}
+  &.syntax--constant {
+    color: @constant;  //none -> text-decoration: none;
+  }
+
+  &.syntax--type.syntax--property-name.syntax--css {
+    color: @support;
+  }
+}
+
+//Class names in css & scss
+.syntax--source .syntax--entity.syntax--name.syntax--tag, .syntax--source .syntax--entity.syntax--other.syntax--attribute-name, .syntax--meta.syntax--tag.syntax--inline, .syntax--meta.syntax--tag.syntax--inline .syntax--entity {
+  color: @class;
+}
+
+  &.syntax--tag,
+  &.syntax--tag .syntax--entity {
+    color: @tag-entity;
+  }
+
+
+.syntax--html {
+
+  .syntax--string {
+    color: @font-color;
+  }
+
+
+  //Inline elements, e.g. <span>
+  .meta {
+
+
+  }
+
+  .syntax--punctuation.syntax--definition.syntax--tag {
+    color: @tag;
+  }
+
+  .syntax--entity {
+
+    &.syntax--name.syntax--tag {
+      text-decoration: done;
+
+      //Structural elements, e.g. <html>
+      &.syntax--structure {
+        color: @tag;
+      }
+
+      //Block level elements, e.g. <div>, <h1>
+      &.syntax--block {
+        color: @tag;
+      }
+
+      //Inline elements, e.g. <span>
+      &.script {
+        //color: @tag;
+      }
+
+    }
+
+    &.syntax--other {
+      &.syntax--attribute-name {
+        color: @element-attr;
+      }
+    }
+
+  }
+
+}
+
+//Entity | exports -> module.exports, <div id= -> <div id="#id">, . -> .className
+.syntax--entity {
+
+  color: @entity;
+
+  //console -> console.log (js)
+  &.syntax--name.syntax--type {
+    color: @entity;
+    text-decoration: none;
+  }
+
+  &.syntax--other.syntax--inherited-class {
+    color: @entity;
+  }
+
+  //init -> init: function(){} (js)
+  &.syntax--name.syntax--function {
+    color: @entity;
+  }
+
+  &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
+    color: @entity;
+  }
+
+  &.syntax--name.syntax--section {
+    color: @entity;
+  }
+
+  //div -> <div> (html), body -> body{} (css)
+  &.syntax--name.syntax--tag {
+    color: @tag;
+    text-decoration: done;
+  }
+
+
+  //CSS classes
+  &.syntax--other.syntax--attribute-name {
+    color: @element-attr;
+
+    //CSS ids
+    &.syntax--id {
+      color: @id;
+    }
+  }
+}
+
+.syntax--meta {
+  & .syntax--class {
+    color: @constant;
+  }
+
+  &.syntax--link {
+    color: @meta;
+  }
+
+  &.syntax--require {
+    color: @meta;
+  }
+
+
+  &.syntax--brace {
+
+    //curly braces - {}
+    &.syntax--curly {
+      color: @brackets;
+    }
+
+    //parenthesis - ()
+    &.syntax--round {
+      color: @font-color;
+    }
+  }
+
+  &.syntax--comma {
+    color: @punctuation;
+  }
+
+  //.css files | commas, ([controls]) -> audio:not([controls])
+  &.syntax--selector {
+    color: @punctuation;
+  }
+
+  &.syntax--separator {
+    background-color: @punctuation;
+    color: @punctuation;
+  }
+}
+
+.syntax--none {
+  color: @font-color;
+}
+
+.syntax--markup {
+  &.syntax--bold {
+    color: @font-color;
+    font-style: bold;
+  }
+
+  &.syntax--changed {
+    color: @font-color;
+  }
+
+  &.syntax--deleted {
+    color: @font-color;
+  }
+
+  &.syntax--italic {
+    color: @font-color;
+    font-style: italic;
+  }
+
+  &.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+    color: @font-color;
+  }
+
+  &.syntax--inserted {
+    color: @font-color;
+  }
+
+  &.syntax--list {
+    color: @font-color;
+  }
+
+  &.syntax--quote {
+    color: @font-color;
+  }
+
+  &.syntax--raw.syntax--inline {
+    color: @font-color;
+  }
+}
+
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+  &.syntax--heading {
+    color: @font-color;
+  }
+}
+
+.atom-text-editor[mini] .scroll-view {
+  padding-left: 1px;
+}
+
+
+//Plugin-specific styles
+.bracket-matcher .region{
+  border-bottom: 1px solid @string;
+  margin-top: 1px;
+}
