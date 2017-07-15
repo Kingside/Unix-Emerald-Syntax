@@ -8,7 +8,5 @@
     "url": "https://github.com/jpjones6/Unix-Emerald-Syntax"
   },
   "license": "MIT",
-  "engines": {
-    "atom": ">=1.3.0"
-  }
+  "engines": {"atom": ">=1.3.0"}
 }
