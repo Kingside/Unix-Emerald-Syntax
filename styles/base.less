@@ -26,7 +26,7 @@ atom-text-editor,
 
     background-color: @gutter-background;
     color: @gutter-text;
-    // border-right: 10px solid @background;
+    //Border-right: 10px solid @background;
 
     .line-number {
 
@@ -43,23 +43,23 @@ atom-text-editor,
         font-weight: 100;
       }
 
-      // Current active line
+      //Current active line
       &.cursor-line-no-selection {
         background-color: @gutter-background-highlight;
         color: @gutter-text-highlight;
-        // font-weight: bold;
+        //font-weight: bold;
       }
 
     }
 
-    // Hover state for line numbers
+    //Hover state for line numbers
     .line-number:hover {
       background-color: @gutter-background;
       color: @gutter-text-highlight;
     }
   }
 
-  // Line number for sections that have been collapsed
+  //Line number for sections that have been collapsed
   .gutter .line-number.folded,
   .gutter .line-number:after,
   .fold-marker:after {
@@ -67,51 +67,51 @@ atom-text-editor,
     background: none;
   }
 
-  // Invisible Characters
+  //Invisible Characters
   .invisible {
     color: @invisible;
   }
 
-  // Cursor Color
+  //Cursor Color
   .cursor {
     border-color: @cursor-color;
     border-left: solid 1px;
   }
 
-  // Background of Selected Text
+  //Background of Selected Text
   .selection .region {
     background-color: @selected;
   }
 
 }
 
-// Add left padding to code view
+//Add left padding to code view
 .scroll-view {
   padding-left: 3px;
 }
 
 
 
-// Selected line style
+//Selected line style
 .line.cursor-line {
   background: none;
   //padding-left: 10px;
   //margin-left: -10px;
 }
 
-// Highlight style for search matches
+//Highlight style for search matches
 .atom-text-editor .search-results .marker .region {
   background-color: transparent;
   border: solid 1px @very-light-green;
 }
 
-// Highlight style for currently selected search result
+//Highlight style for currently selected search result
 .atom-text-editor .search-results .marker.current-result .region {
   background-color: @selected;
   border: solid 1px @very-light-green;
 }
 
-// Comments
+//Comments
 .comment {
   color: @comment;
   background: none;
@@ -120,36 +120,36 @@ atom-text-editor,
 
 .keyword {
 
-  // @ of @font-face & @media
+  //@ of @font-face & @media
   color: @keyword;
 
-  // try, catch, if, else, return (js)
+  //try, catch, if, else, return (js)
   &.control {
     color: @control;
   }
 
-  // =, +, -, ?, :, !=. &&, in (js)
+  //=, +, -, ?, :, !=. &&, in (js)
   &.operator {
     color: @keyword;
   }
 
-  // Unknown modifier
+  //Unknown modifier
   &.other.special-method {
     color: @keyword;
   }
 
-  // Unknown modifier
+  //Unknown modifier
   &.other.unit {
     color: @keyword;
   }
 }
 
 
-// Storage
+//Storage
 .storage {
   color: @storage;
 
-  // var of var a = b;
+  //var of var a = b;
   &.modifier {
     color: @storage;
   }
@@ -159,25 +159,25 @@ atom-text-editor,
 
 .constant {
 
-  // true, false, null, undefined
+  //true, false, null, undefined
   color: @constant;
 
-  // \ in ("what\'s")
+  //\ in ("what\'s")
   &.character.escape {
     color: @constant;
   }
 
-  // Numbers
+  //Numbers
   &.numeric {
     color: @numeric;
   }
 
-  // FFFFFF -> #FFFFFF (css)
+  //FFFFFF -> #FFFFFF (css)
   &.other.color {
     color: @constant;
   }
 
-  // Unknown modifier
+  //Unknown modifier
   &.other.symbol {
     color: @constant;
   }
@@ -187,22 +187,22 @@ atom-text-editor,
 
 .variable {
 
-  // this (js), @varable_name (sass), http://web.com in url(http://web.com), variable in {{variable}} (handlebars)
+  //this (js), @varable_name (sass), http://web.com in url(http://web.com), variable in {{variable}} (handlebars)
   color: @variable;
 
-  // Unknown modifier
+  //Unknown modifier
   &.interpolation {
     color: @variable;
   }
 
-  // foo & bar in function name(foo, bar)
+  //foo & bar in function name(foo, bar)
   &.parameter.function {
     color: @function-param;
   }
 }
 
 
-// Invalid Text
+//Invalid Text
 .invalid.illegal, .invalid.deprecated {
   background: none;
   color: @error;
@@ -214,17 +214,17 @@ atom-text-editor,
 
   }
 
-  // 'value' in var='value', "name.png" or src="name.png"  , etc
+  //'value' in var='value', "name.png" or src="name.png"  , etc
   color: @string;
 
-  // Regex - [\da-z] in /-([\da-z])/gi (js)
+  //Regex - [\da-z] in /-([\da-z])/gi (js)
   .constant {
     color: @string;
   }
 
   &.regexp {
 
-    // ?:input, select, textarea, button in  /^(?:input|select|textarea|button)$/i,
+    //?:input, select, textarea, button in  /^(?:input|select|textarea|button)$/i,
     color: @string;
 
     .constant.character.escape,
@@ -247,18 +247,18 @@ atom-text-editor,
 
   }
 
-  // site.dir in {{site.dir}}
+  //site.dir in {{site.dir}}
   .variable {
     color: @variable;
   }
 
-  // Unknown modifier
+  //Unknown modifier
   &.other.link {
     color: @string;
   }
 }
 
-// String interpolation in Ruby, CoffeeScript, and others
+//String interpolation in Ruby, CoffeeScript, and others
 .source .string {
   .source,
   .meta.embedded.line {
@@ -269,12 +269,12 @@ atom-text-editor,
     color: @string;
 
     .source {
-      color: @string;  // Required for the end of embedded strings in Ruby # 716
+      color: @string;  //Required for the end of embedded strings in Ruby # 716
     }
   }
 }
 
-// Miscellaneous punctuation
+//Miscellaneous punctuation
 .punctuation {
 
   &.terminator {
@@ -293,7 +293,7 @@ atom-text-editor,
       color: @comment;
     }
 
-    // Quotes
+    //Quotes
     &.string,
     &.variable,
     &.parameters,
@@ -327,26 +327,26 @@ atom-text-editor,
 
 .support {
 
-  // background in background: none,
+  //background in background: none,
   color: @support;
 
-  // Support | module -> module.exports
+  //Support | module -> module.exports
   &.class {
     color: @support;
   }
 
   &.function  {
-    color: @support; // .log -> console.log, url of url(http://web.com)
+    color: @support; //.log -> console.log, url of url(http://web.com)
 
-    // Unknown modifier
+    //Unknown modifier
     &.any-method {
       color: @support;
     }
   }
 
-  // {{}} -> {{ variable }}
+  //{{}} -> {{ variable }}
   &.constant {
-    color: @constant;  // none -> text-decoration: none;
+    color: @constant;  //none -> text-decoration: none;
   }
 
   &.type.property-name.css {
@@ -354,7 +354,7 @@ atom-text-editor,
   }
 }
 
-// .class names in css & scss
+//.class names in css & scss
 .source .entity.name.tag, .source .entity.other.attribute-name, .meta.tag.inline, .meta.tag.inline .entity {
   color: @class;
 }
@@ -372,7 +372,7 @@ atom-text-editor,
   }
 
 
-  // Inline elements, e.g. <span>
+  //Inline elements, e.g. <span>
   .meta {
 
 
@@ -387,19 +387,19 @@ atom-text-editor,
     &.name.tag {
       text-decoration: done;
 
-      // Structural elements, e.g. <html>
+      //Structural elements, e.g. <html>
       &.structure {
         color: @tag;
       }
 
-      // Block level elements, e.g. <div>, <h1>
+      //Block level elements, e.g. <div>, <h1>
       &.block {
         color: @tag;
       }
 
-      // Inline elements, e.g. <span>
+      //Inline elements, e.g. <span>
       &.script {
-        // color: @tag;
+        //color: @tag;
       }
 
     }
@@ -414,12 +414,12 @@ atom-text-editor,
 
 }
 
-// Entity | exports -> module.exports, <div id= -> <div id="#id">, . -> .className
+//Entity | exports -> module.exports, <div id= -> <div id="#id">, . -> .className
 .entity {
 
   color: @entity;
 
-  // console -> console.log (js)
+  //console -> console.log (js)
   &.name.type {
     color: @entity;
     text-decoration: none;
@@ -429,7 +429,7 @@ atom-text-editor,
     color: @entity;
   }
 
-  // init -> init: function(){} (js)
+  //init -> init: function(){} (js)
   &.name.function {
     color: @entity;
   }
@@ -442,18 +442,18 @@ atom-text-editor,
     color: @entity;
   }
 
-  // div -> <div> (html), body -> body{} (css)
+  //div -> <div> (html), body -> body{} (css)
   &.name.tag {
     color: @tag;
     text-decoration: done;
   }
 
 
-  // CSS classes
+  //CSS classes
   &.other.attribute-name {
     color: @element-attr;
 
-    // CSS ids
+    //CSS ids
     &.id {
       color: @id;
     }
@@ -476,12 +476,12 @@ atom-text-editor,
 
   &.brace {
 
-    // curly braces - {}
+    //curly braces - {}
     &.curly {
       color: @brackets;
     }
 
-    // parenthesis - ()
+    //parenthesis - ()
     &.round {
       color: @font-color;
     }
@@ -491,7 +491,7 @@ atom-text-editor,
     color: @punctuation;
   }
 
-  // .css files | commas, ([controls]) -> audio:not([controls])
+  //.css files | commas, ([controls]) -> audio:not([controls])
   &.selector {
     color: @punctuation;
   }
@@ -558,7 +558,7 @@ atom-text-editor,
 }
 
 
-// Plugin-specific styles
+//Plugin-specific styles
 .bracket-matcher .region{
   border-bottom: 1px solid @string;
   margin-top: 1px;
