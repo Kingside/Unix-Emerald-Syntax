@@ -1,12 +1,14 @@
 {
   "name": "Unix-Emerald-Syntax",
   "theme": "syntax",
-  "version": "1.0.0",
-  "description": "A classic Unix like syntax highlighting theme that borrows heavily from the now deprecated emerald-syntax. For anyone that likes green, this is for you.",
+  "version": "0.0.0",
+  "description": "A classic Unix like syntax theme.",
   "repository": {
     "type": "git",
-    "url": "http://github.com/jpjones6/Unix-Emerald-Syntax"
+    "url": "https://github.com/jpjones6/Unix-Emerald-Syntax"
   },
   "license": "MIT",
-  "engines": {"atom": ">=1.3.0"}
+  "engines": {
+    "atom": ">=1.3.0"
+  }
 }
